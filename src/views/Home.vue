@@ -1,29 +1,66 @@
-<script setup>
-import ButtonRepo from '@/components/ButtonRepo.vue'
-</script>
-
 <template>
-  <div class="bg-gray-50">
-    <div
-      class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8"
-    >
-      <h2
-        class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
-      >
-        Ready to dive in?
-        <br />
-        <span class="text-indigo-600">Vite + Vue 3 + Tailwind CSS</span>
-      </h2>
-      <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-        <div class="inline-flex rounded-md shadow">
-          <router-link
-            to="/about"
-            class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out hover:bg-indigo-500 focus:outline-none"
-            >Next Page</router-link
-          >
+  <div class="container h-screen w-full bg-slate-500 flex justify-center items-center">
+    <div class="container-ms rounded-md shadow-lg h-[98vh] w-[98%] bg-slate-900">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="col-span-1 flex justify-start">
+          <img class="h-14 w-14" src="src/images/arrows_svg.svg" alt="Logo" />
         </div>
-        <ButtonRepo />
+        <div class="col-span-1">
+          <h1 class="">Conveter</h1>
+        </div>
+      </div>
+      <div class="form_container grid grid-cols-5 gap-4 mx-auto w-full h-10 my-3">
+        <p class="col-span-1 mx-1 rounded-md bg-red-600">temp</p>
+        <p class="col-span-1 mx-1 rounded-md bg-amber-600">Weight</p>
+        <p class="col-span-1 mx-1 rounded-md bg-green-600">lengh</p>
+        <p class="col-span-1 mx-1 rounded-md bg-yellow-600">speed</p>
+        <p class="col-span-1 mx-1 rounded-md bg-indigo-600">Time</p>
+      </div>
+      <!-- FORMS  -->
+      <!-- Amount Input  -->
+      <div class="my-5">
+        <div class="mt-1">
+          <input
+            type="number"
+            name="name"
+            id="name"
+            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 px-4 rounded-full"
+            placeholder="Amount"
+          />
+        </div>
+      </div>
+      <!-- Convert From  -->
+      <div>
+        <select
+          id="location"
+          name="location"
+          class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 px-4 rounded-full"
+        >
+          <option>United States</option>
+          <option selected="">Canada</option>
+          <option>Mexico</option>
+        </select>
+      </div>
+      <h2 class="text-white text-center">TO</h2>
+      <!-- Convert To  -->
+      <div>
+        <select
+          id="location"
+          name="location"
+          class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 px-4 rounded-full"
+        >
+          <option>United States</option>
+          <option selected="">Canada</option>
+          <option>Mexico</option>
+        </select>
+      </div>
+      <h2 class="text-white text-center">=</h2>
+      <div
+        class="shadow-sm focus:ring-indigo-500 bg-slate-50 h-11 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 px-4 rounded-full flex justify-center items-center"
+      >
+        <h3 class="text-center">OUTPUT</h3>
       </div>
     </div>
   </div>
 </template>
+<script setup></script>
