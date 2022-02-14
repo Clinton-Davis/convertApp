@@ -1,6 +1,6 @@
 <template>
   <div class="container h-screen w-full bg-slate-500 flex justify-center items-center">
-    <div class="container-ms rounded-md shadow-lg h-[98vh] w-[98%] bg-slate-900">
+    <div class="container-ms rounded-md shadow-lg h-[98vh] max-w-[30rem] bg-slate-900">
       <div class="grid grid-cols-2 gap-4">
         <div class="col-span-1 flex justify-start">
           <img class="h-14 w-14" src="src/images/arrows_svg.svg" alt="Logo" />
@@ -63,4 +63,6 @@
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+
+</script>
