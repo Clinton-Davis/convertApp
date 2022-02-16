@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export const useSelctOptionsStore = defineStore("temp", {
+export const useTempOptionsStore = defineStore("temp", {
     state: ()=> ({
         tempScales: ['Fahrenheit', 'Celsius', 'Kelvin'],
         userInput: null,
@@ -8,10 +8,10 @@ export const useSelctOptionsStore = defineStore("temp", {
     }),
     getters: {
         getScales: (state) => {
-            state.tempScales
+           return state.tempScales
         },
         getOutPut: (state) => {
-            state.outPut
+           return state.outPut
         }
     },
     actions: {
