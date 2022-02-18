@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 export const useTempOptionsStore = defineStore("temp", {
     state: ()=> ({
         tempScales: ['Fahrenheit', 'Celsius', 'Kelvin'],
-        userInput: null,
+        userInput: [],
         outPut: null,
     }),
     getters: {
@@ -16,7 +16,7 @@ export const useTempOptionsStore = defineStore("temp", {
     },
     actions: {
         reset() {
-            this.userInput = null;
+            this.userInput = [];
         },
         CtoF(){
             //(0°C × 9/5) + 32 = 32°F
