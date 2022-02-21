@@ -1,6 +1,6 @@
 <template>
-  <div class="container h-screen w-full bg-slate-500 flex justify-center items-center">
-    <div class="container-ms rounded-md shadow-lg h-[98vh] max-w-[30rem] bg-slate-900">
+  <div class="container flex h-screen w-full items-center justify-center bg-slate-500">
+    <div class="container-ms h-[98vh] max-w-[30rem] rounded-md bg-slate-900 shadow-lg">
       <div class="grid grid-cols-2 gap-4">
         <div class="col-span-1 flex justify-start">
           <img class="h-14 w-14" src="src/images/arrows_svg.svg" alt="Logo" />
@@ -10,14 +10,14 @@
         </div>
       </div>
       <!-- BUTTONS ICONS  -->
-      <div class="form_container grid grid-cols-5 gap-4 mx-auto w-full h-auto my-3">
+      <div class="form_container mx-auto my-3 grid h-auto w-full grid-cols-5 gap-4">
         <button
           @click="Active('temp')"
-          class="cursor-pointer py-2 px-4 col-span-1 mx-1 rounded-md relative"
+          class="relative col-span-1 mx-1 cursor-pointer rounded-md py-2 px-4"
         >
           <span class="flex items-center justify-center space-x-2">
             <svg
-              class="w-8 h-16"
+              class="h-16 w-8"
               :class="{ tempOuterActive: temp }"
               viewBox="0 0 13 24"
               fill="none"
@@ -51,11 +51,11 @@
 
         <button
           @click="Active('weight')"
-          class="cursor-pointer col-span-1 mx-1 rounded-md"
+          class="col-span-1 mx-1 cursor-pointer rounded-md"
         >
           <span class="flex items-center justify-center space-x-2">
             <svg
-              class="w-[53px] h-[59px]"
+              class="h-[59px] w-[53px]"
               :class="{ weightUnionActive: weight }"
               viewBox="0 0 63 69"
               fill="none"
@@ -83,7 +83,7 @@
         </button>
         <button
           @click="Active('lengh')"
-          class="cursor-pointer col-span-1 mx-1 rounded-md"
+          class="col-span-1 mx-1 cursor-pointer rounded-md"
         >
           <span class="flex items-center justify-center space-x-2">
             <svg
@@ -114,7 +114,7 @@
         </button>
         <button
           @click="Active('speed')"
-          class="cursor-pointer col-span-1 mx-1 rounded-md"
+          class="col-span-1 mx-1 cursor-pointer rounded-md"
         >
           <span class="flex items-center justify-center space-x-2">
             <svg
@@ -143,7 +143,7 @@
             </svg>
           </span>
         </button>
-        <button @click="Active('time')" class="cursor-pointer col-span-1 mx-1 rounded-md">
+        <button @click="Active('time')" class="col-span-1 mx-1 cursor-pointer rounded-md">
           <span class="flex items-center justify-center space-x-2">
             <svg
               class="w-18 h-16"
@@ -178,7 +178,7 @@
             type="number"
             name="name"
             id="name"
-            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 px-4 rounded-full"
+            class="block w-full rounded-full border-gray-300 px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
             placeholder="Amount"
             v-model="amountInput"
           />
@@ -189,14 +189,14 @@
         <select
           id="location"
           name="location"
-          class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 px-4 rounded-full"
+          class="block w-full rounded-full border-gray-300 px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           v-model="fromInput"
         >
           <option selected disabled>Select from</option>
           <option v-for="l in list" :value="l">{{ l }}</option>
         </select>
       </div>
-      <span class="flex items-center justify-center my-2">
+      <span class="my-2 flex items-center justify-center">
         <svg
           class="w-18 h-10"
           viewBox="0 0 24 25"
@@ -240,20 +240,20 @@
         <select
           id="location"
           name="location"
-          class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 px-4 rounded-full"
+          class="block w-full rounded-full border-gray-300 px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           v-model="toInput"
         >
           <option selected disabled value="">Select To</option>
           <option v-for="l in list" :value="l">{{ l }}</option>
         </select>
       </div>
-      <div class="col-span-1 relative flex justify-center my-1">
+      <div class="relative col-span-1 my-1 flex justify-center">
         <!-- Just an Idea  -->
         <!-- Convert -->
         <a @click="convert" class="cursor-pointer">
           <span class="flex items-center justify-center space-x-2">
             <svg
-              class="w-20 h-20"
+              class="h-20 w-20"
               viewBox="0 0 58 41"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -275,7 +275,7 @@
         </a>
       </div>
       <div
-        class="shadow-sm focus:ring-indigo-500 bg-slate-50 h-11 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 px-4 rounded-full flex justify-center items-center"
+        class="block flex h-11 w-full items-center justify-center rounded-full border-gray-300 bg-slate-50 px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
       >
         <h3 class="text-center">
           {{ outPut }}
@@ -316,8 +316,17 @@ function convert() {
   let amount = amountInput.value;
   let from = fromInput.value;
   let to = toInput.value;
-  let gotOutput = tempLogic(amount, from, to);
-  console.log(gotOutput);
+  if (temp.value) {
+    outPut.value = tempLogic(amount, from, to);
+  } else if (weight.value) {
+    outPut.value = Logic(amount, from, to);
+  } else if (length.value) {
+    outPut.value = lengthLogic(amount, from, to);
+  } else if (speed.value) {
+    outPut.value = speedLogic(amount, from, to);
+  } else {
+    outPut.value = timeLogic(amount, from, to);
+  }
 }
 
 function Active(name) {
