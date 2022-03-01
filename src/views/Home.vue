@@ -14,7 +14,7 @@
             </div>
             <!-- BUTTONS ICONS  -->
             <div class="form_container mx-auto my-3 grid h-auto w-full grid-cols-5 gap-4">
-                <button @click="Active('temp')" class="relative col-span-1 mx-1 cursor-pointer rounded-md py-2 px-4">
+                <button @click="Active('temp')" class="relative col-span-1 mx-1 cursor-pointer rounded-md py-2 px-4 active:scale-[0.9]">
                     <span class="flex items-center justify-center space-x-2">
                         <svg class="h-16 w-8" :class="{ tempOuterActive: temp }" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="Temp">
@@ -41,9 +41,10 @@
                             </g>
                         </svg>
                     </span>
+                    <h2 class="text-white">Temp</h2>
                 </button>
 
-                <button @click="Active('weight')" class="col-span-1 mx-1 cursor-pointer rounded-md">
+                <button @click="Active('weight')" class="col-span-1 mx-1 cursor-pointer rounded-md active:scale-[0.9]">
                     <span class="flex items-center justify-center space-x-2">
                         <svg
                             class="h-[59px] w-[53px]"
@@ -71,8 +72,9 @@
                             </g>
                         </svg>
                     </span>
+                    <h2 class="text-white">Weights</h2>
                 </button>
-                <button @click="Active('lengh')" class="col-span-1 mx-1 cursor-pointer rounded-md">
+                <button @click="Active('lengh')" class="col-span-1 mx-1 cursor-pointer rounded-md active:scale-[0.9]">
                     <span class="flex items-center justify-center space-x-2">
                         <svg
                             class="w-18 h-16"
@@ -99,8 +101,9 @@
                             </g>
                         </svg>
                     </span>
+                    <h2 class="text-white">length</h2>
                 </button>
-                <button @click="Active('speed')" class="col-span-1 mx-1 cursor-pointer rounded-md">
+                <button @click="Active('speed')" class="col-span-1 mx-1 cursor-pointer rounded-md active:scale-[0.9]">
                     <span class="flex items-center justify-center space-x-2">
                         <svg class="w-18 h-16" :class="{ speedActive: speed }" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g>
@@ -121,8 +124,9 @@
                             </g>
                         </svg>
                     </span>
+                    <h2 class="text-white">Speed</h2>
                 </button>
-                <button @click="Active('time')" class="col-span-1 mx-1 cursor-pointer rounded-md">
+                <button @click="Active('time')" class="col-span-1 mx-1 cursor-pointer rounded-md active:scale-[0.9]">
                     <span class="flex items-center justify-center space-x-2">
                         <svg class="w-18 h-16" :class="{ timeActive: time }" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="TimeOutside">
@@ -141,6 +145,7 @@
                             </g>
                         </svg>
                     </span>
+                    <h2 class="text-white">Time</h2>
                 </button>
             </div>
             <!-- FORMS  -->
@@ -220,7 +225,7 @@
                 <!-- Convert -->
                 <button
                     @click="convert"
-                    class="sha drop-shadow-slate-700 relative m-3 cursor-pointer rounded-md bg-gradient-to-r from-red-500 via-slate-800 to-blue-500 px-8 drop-shadow-md"
+                    class="sha drop-shadow-slate-700 relative m-3 cursor-pointer rounded-md bg-gradient-to-r from-red-500 via-slate-800 to-blue-500 px-8 drop-shadow-md active:scale-[0.9]"
                 >
                     <h2 class="top text absolute top-6 right-0 text-3xl font-bold tracking-widest text-white">Convert</h2>
                     <span class="flex items-center justify-center space-x-2">
